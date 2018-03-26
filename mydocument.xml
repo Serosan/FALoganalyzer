@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<advance>
+		<matcher>
+			<text>程序启动命令:.*\n</text>
+			<loop>Y</loop>
+			<mark>1</mark>
+		</matcher>
+		<matcher>
+			<text>故障分析启动参数 trip_cb=(.*) fault_id=(.*) trip_time=(.*) force_mm_flag=(.*) other_info=(.*)\n</text>
+			<loop>Y</loop>
+			<mark>2</mark>
+		</matcher>
+		<matcher>
+			<text>系统参数(.*)未定义,</text>
+			<loop>Y</loop>
+			<mark>3</mark>
+			<matcher>
+				<text>采用默认DA参数:(.*)\n</text>
+				<loop>Y</loop>
+				<mark>31</mark>
+			</matcher>
+		</matcher>
+		<matcher>
+			<text>自动执行方式(.*)\n</text>
+			<loop>N</loop>
+			<mark>26</mark>
+		</matcher>
+		<matcher>
+			<text>没有在方式数据中找到</text>
+			<loop>Y</loop>
+			<mark>4</mark>
+		</matcher>
+		<matcher>
+			<text>:找到该跳闸开关的方式设备</text>
+			<loop>Y</loop>
+			<mark>4</mark>
+		</matcher>
+		<matcher>
+			<text>(在线|仿真)运行模式下启动故障分析，执行方式为(自动|交互)方式</text>
+			<loop>Y</loop>
+			<mark>5</mark>
+		</matcher>
+		<matcher>
+			<text>构建网络模型结束，耗时 (.*) 秒</text>
+			<loop>Y</loop>
+			<mark>6</mark>
+		</matcher>
+		<matcher>
+			<text>全网拓扑耗时  (.*)  秒</text>
+			<loop>Y</loop>
+			<mark>7</mark>
+		</matcher>
+		<matcher>
+			<text>: 开关 (.*) (关联保护|未关联保护).*\n</text>
+			<loop>Y</loop>
+			<mark>19</mark>
+			<matcher>
+				<text>: 保护 (.*) (数据封锁|人工置数)\n</text>
+				<loop>Y</loop>
+				<mark>73</mark>
+				<matcher>
+					<text>: 由保护动作信息判断，开关 (.*) 流经短路电流\n</text>
+					<loop>Y</loop>
+					<mark>72</mark>
+				</matcher>
+				<matcher>
+					<text>: 馈线段 (.*) (关联|未关联)故障指示器\n</text>
+					<loop>Y</loop>
+					<mark>74</mark>
+				</matcher>
+			</matcher>
+		</matcher>
+		<matcher>
+			<text>故障拓扑耗时(.*)秒</text>
+			<loop>Y</loop>
+			<mark>8</mark>
+		</matcher>
+		<matcher>
+			<text>开关 (.*) 对应的过流信号 (.*) (状态可信|状态可疑)\n</text>
+			<loop>Y</loop>
+			<mark>9</mark>
+		</matcher>
+		<matcher>
+			<text>故障定位耗时(.*)秒</text>
+			<loop>Y</loop>
+			<mark>10</mark>
+		</matcher>
+		<matcher>
+			<text>故障隔离耗时  (.*)  秒</text>
+			<loop>Y</loop>
+			<mark>11</mark>
+		</matcher>
+		<matcher>
+			<text>出线端口故障</text>
+			<loop>Y</loop>
+			<mark>21</mark>
+		</matcher>
+		<matcher>
+			<text>故障上游恢复耗时  (.*)  秒</text>
+			<loop>Y</loop>
+			<mark>12</mark>
+		</matcher>
+		<matcher>
+			<text>故障下游恢复耗时  (.*)  秒</text>
+			<loop>Y</loop>
+			<mark>13</mark>
+		</matcher>
+		<matcher>
+			<text>故障下游非故障区域负荷的转供电源出线开关为 (.*)\n</text>
+			<loop>Y</loop>
+			<mark>14</mark>
+			<matcher>
+				<text>: ([^\n]{1,10})开关能够安全接收 ([0-9]*\.?[0-9]+) 安培负荷的转载\n</text>
+				<loop>Y</loop>
+				<mark>141</mark>
+			</matcher>
+			<matcher>
+				<text>: ([^\n]{1,10})开关 下游无需做负荷转供，不做隔离开断处理\n</text>
+				<loop>Y</loop>
+				<mark>142</mark>
+			</matcher>
+		</matcher>
+		<matcher>
+			<text>故障分析耗时  (.*)  秒</text>
+			<loop>Y</loop>
+			<mark>15</mark>
+		</matcher>
+		<matcher>
+			<text>: ([\s\S]{,50}) 区域发生故障  , 导致(.*) 跳闸。\n</text>
+			<loop>Y</loop>
+			<mark>16</mark>
+			<matcher>
+				<text>系统提供的隔离方案为扩大隔离范围之后的结果，扩大隔离范围原因为：(.*)  。\n</text>
+				<loop>Y</loop>
+				<mark>161</mark>
+			</matcher>
+		</matcher>
+		<matcher>
+			<text>开始分类各区段设备信息</text>
+			<loop>Y</loop>
+			<mark>17</mark>
+			<matcher>
+				<text>: .*设备id (.*) </text>
+				<loop>Y</loop>
+				<mark>171</mark>
+			</matcher>
+		</matcher>
+		<matcher>
+			<text>开始将故障处理信息写入实时库</text>
+			<loop>Y</loop>
+			<mark>20</mark>
+			<matcher>
+				<text>add table error:(.*) ret_code=(.*) 记录数(.*)\n</text>
+				<loop>Y</loop>
+				<mark>201</mark>
+			</matcher>
+		</matcher>
+		<matcher>
+			<text>故障处理总耗时  (.*)  秒</text>
+			<loop>Y</loop>
+			<mark>18</mark>
+		</matcher>
+	</advance>
+	<simple>
+		<matcher>
+			<text>故障电流信号不连续</text>
+			<loop>Y</loop>
+			<mark>22</mark>
+		</matcher>
+		<matcher>
+			<text>开关遥控未配置</text>
+			<loop>Y</loop>
+			<mark>24</mark>
+		</matcher>
+		<matcher>
+			<text>开关关联保护状态可疑</text>
+			<loop>Y</loop>
+			<mark>23</mark>
+		</matcher>
+		<matcher>
+			<text>开关挂牌</text>
+			<loop>Y</loop>
+			<mark>25</mark>
+		</matcher>
+		<matcher>
+			<text>: 扩大隔离范围：(.*)\n</text>
+			<loop>Y</loop>
+			<mark>27</mark>
+		</matcher>
+	</simple>
+</root>

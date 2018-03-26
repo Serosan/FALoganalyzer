@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<submenu title="基础数据">
+		<content prefix="跳闸开关">
+			<index>2</index>
+			<postion prefix=":">1</postion>
+		</content>
+		<content prefix="跳闸时间">
+			<index>2</index>
+			<postion prefix="">3</postion>
+		</content>
+		<content prefix="故障ID">
+			<index>2</index>
+			<postion prefix=":">2</postion>
+		</content>
+		<content prefix="运行模式">
+			<index>5</index>
+			<postion prefix=":">1</postion>
+		</content>
+		<content prefix="执行模式">
+			<index>5</index>
+			<postion prefix=":">2</postion>
+		</content>
+		<content prefix="故障区域描述">
+			<index>16</index>
+			<postion prefix=":">1</postion>
+		</content>
+		<content prefix="启动方式">
+			<index>1</index>
+			<mode>1</mode>
+			<placer_true>进程启动</placer_true>
+			<placer_false>消息启动</placer_false>
+			<postion prefix=":">0</postion>
+		</content>
+		<content prefix="传入参数:force_mm_flag=">
+			<index>2</index>
+			<postion prefix=":">4</postion>
+			<nextmode>1</nextmode>
+		</content>
+		<content prefix="other_info=">
+			<index>2</index>
+			<playmode>1</playmode>
+			<postion prefix=":">5</postion>
+		</content>
+		<content prefix="特殊标志">
+			<index>2</index>
+			<postion prefix=":">5</postion>
+		</content>
+	</submenu>
+	<submenu title="配置信息">
+		<content prefix="系统参数">
+			<index>3</index>
+			<postion prefix="">1</postion>
+			<content prefix="采取默认DA参数">
+				<index>31</index>
+				<postion prefix="">1</postion>
+				<playmode>1</playmode>
+			</content>
+		</content>
+	</submenu>
+	<submenu title="拓扑及保护">
+		<content prefix="开关">
+			<index>19</index>
+			<postion prefix="">1</postion>
+			<content prefix="保护">
+				<index>73</index>
+				<postion prefix="">1</postion>
+				<content prefix="保护动作">
+					<index>72</index>
+					<postion prefix="">1</postion>
+					<playmode>1</playmode>
+					<mode>1</mode>
+					<nextmode>1</nextmode>
+					<placer_true>是</placer_true>
+					<placer_false>否</placer_false>
+				</content>
+				<content prefix="馈线段,关联状态">
+					<index>74</index>
+					<postion prefix="">1,2</postion>
+				</content>
+			</content>
+		</content>
+	</submenu>
+	<submenu title="隔离异常信息">
+		<content prefix="扩大隔离范围">
+			<index>27</index>
+			<postion prefix="">1</postion>
+		</content>
+	</submenu>
+	<submenu title="转供方案">
+	</submenu>
+	<submenu title="转供方案">
+	</submenu>
+	<submenu title="耗时记录">
+		<content prefix="构建网络模型">
+			<index>6</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="全网拓扑耗时">
+			<index>7</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="故障拓扑耗时">
+			<index>8</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="故障定位耗时">
+			<index>10</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="故障上游恢复耗时">
+			<index>12</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="故障下游恢复耗时">
+			<index>13</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="故障分析耗时">
+			<index>15</index>
+			<postion prefix="">1</postion>
+		</content>
+		<content prefix="故障处理总耗时">
+			<index>18</index>
+			<postion prefix="">1</postion>
+		</content>
+	</submenu>
+	<submenu title="区域设备信息">
+		<content prefix="各区段设备信息">
+			<index>17</index>
+			<postion prefix="">0</postion>
+			<ignore>1</ignore>
+			<content prefix="故障设备">
+				<index>171</index>
+				<postion prefix="">1</postion>
+			</content>
+		</content>
+	</submenu>
+	<submenu title="转供方案">
+		<content prefix="电源开关">
+			<index>14</index>
+			<postion prefix="">1</postion>
+			<content prefix="转供开关,可提供容量">
+				<index>141</index>
+				<postion prefix="">1,2</postion>
+			</content>
+			<content prefix="转供开关,无需转供">
+				<index>142</index>
+				<postion prefix="">1,2</postion>
+			</content>
+		</content>
+	</submenu>
+	<submenu title="存入实时库情况">
+		<content prefix="存入实时库情况">
+			<index>20</index>
+			<postion prefix="">0</postion>
+			<ignore>1</ignore>
+			<content prefix="表名,错误码,记录数">
+				<index>201</index>
+				<postion prefix="">1,2,3</postion>
+			</content>
+		</content>
+	</submenu>
+	<submenu title="自动执行情况">
+		<content prefix="II">
+			<index>26</index>
+			<postion prefix=":">0</postion>
+		</content>
+	</submenu>
+	<submenu title="异常信息显示">
+		<content prefix="II">
+			<index>22</index>
+			<postion prefix=":">0</postion>
+		</content>
+	</submenu>
+</menu>
